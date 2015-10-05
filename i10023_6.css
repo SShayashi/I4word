@@ -1,0 +1,287 @@
+/*基本パーツ（よくわからｎ）*/
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    background-color: #FFFAFA;
+}
+.clearfix {
+    min-height: 1px;/*高さの最小値*/
+}
+
+/*コンテンツを囲む罫線用*/
+.keisen-white {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #555555;
+    border-left: 2px solid #555555;
+    border-right: 2px solid #555555;
+    border-bottom-left-radius: 10px;  
+    border-bottom-right-radius: 10px;  
+}
+
+
+
+/*ページ上部*/
+div#pagetop {
+	width: 100%;/*横幅をどれほど広げるか*/
+    background-color: #555555;
+    border-bottom: 2px solid #555555;
+    padding-top: 1px;/*ヘッダーの太さ*/
+}
+	/*ページ左上の文字の設定*/
+	div#pagetop h1#introduction {
+	    font-size: 80%;
+	    color:#ffffff; 
+	    padding-left: 5px;
+	    padding-top: 5px;
+	    float: left;
+	    width: 20%;
+	}
+
+
+	/*右上の検索ボタンの作成*/
+	div#pagetop div#srchBox {
+    float: right;
+    width: 34%;
+	}
+	#srchBox * {
+	    font-size: 13px;/*スイッチのフォントサイズ*/
+	    margin: 0;
+	    padding: 0;
+	}
+	#srchBox #srch {
+	    padding: 0 5px;
+	}
+	#srchBox #srch #srchForm {
+	    white-space: nowrap;
+	}
+	#srchBox #srchInput {
+	    margin-right: 6px;
+	    width: 100px;
+	}
+	#srchBox #srchBtn {
+	    width: 80px;
+	}
+	#srchBox #srchLogo {
+	    margin-top: 2px;
+	    text-align: right;
+	}
+	#srchBox #srchLogo a {
+	    color: #ffffff;
+	    font-size: 85%;
+	    text-decoration: none;
+	}
+	
+
+/*タイトルの部分*/
+div#header {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #555555;
+    padding: 3px 0;
+}
+div#title {
+    float: left;
+    width: 20%
+}
+
+	/*タイトルの文字部分*/
+	div#description {
+	    width: 50%;
+	    margin-left: 0px;
+	    margin-top: 0px;
+	   
+	    position: absolute;
+	    top: 40px;
+	    left: 260px;
+	}
+
+/*メインコンテンツの部分　全て左につめてそろえる*/
+ div#wrapper {
+    float: cennter;
+    width: 78%;
+}
+	/*メインコンテンツ中央部分*/
+	div#primary-column {
+	    padding: 5px 20px;
+	    float: right;
+	    width: 68%;
+	}
+		/*ホームへの場所をどれほどとるか*/
+			div#crumbs {
+			    width: 100%;
+			}
+			/*ホームへの文字の設定*/
+			div#crumbs-inner {
+		    background-color: #FFFAFA;
+		    border: 2px solid #555555;
+		    font-size: 80%;
+		    padding-left: 10px;
+			}
+	/*メインコンテンツの真ん中のタイトルの書式*/
+	div#centerfont{
+		font-size: ;
+	}			
+	/*メインコンテンツの真ん中の文章*/
+
+	div.section {
+    margin-bottom: 10px;
+    margin-top: 5px;
+	}
+
+	div.entry-body {
+    padding: 0 10px;
+    /*
+	normal
+    	英語等は単語の途中では改行せず、単語の切れ目で改行されます。日本語・中国語・韓国語等は表示範囲に合わせて改行されます。このため単語の途中で改行されることもあります。
+	break-all
+    	言語に関係なく表示範囲に合わせて改行されます。このため単語の途中で改行されることもあります。
+	keep-all
+   		言語に関係なく単語の途中では改行せず、単語の切れ目で改行されます。
+   	*/
+    word-break: break-all;
+	}
+
+	/*メインコンテンツ左側の文字をきれいに囲む*/
+	div.left-column h2, div.right-column h2 {
+		border-top-left-radius: 10px;  
+    	border-top-right-radius: 10px;  
+	    background-color: #98FB98;
+	    border: 2px solid #555555;
+	    font-size: 100%;
+	    padding: 3px 5px 3px 8px;
+	}
+	/*メインコンテンツ中央の文字をきれいに囲む*/
+	div.center h4{
+		border-top-left-radius: 10px;  
+    	border-top-right-radius: 10px;  
+	    background-color: #FF9933;
+	    border: 2px solid #555555;
+	    font-size: 120%;
+	    padding: 3px 5px 3px 8px;
+	}
+
+
+	/*囲いを作成する背景色無し*/
+	div.left-column div.sec-menu, div.right-column div.sec-menu {
+	    margin-bottom: 8px;
+	    overflow: hidden;
+	    border: 2px solid #555555;
+	    padding: 10px 5px;
+	    word-break: break-all;
+	    border-bottom-left-radius: 10px;  
+    	border-bottom-right-radius: 10px;  
+	}
+/*左のコンテンツの位置*/
+.float-left {
+    float: left;
+    position: absolute;
+    top:90px;
+    left:30px;
+    bottom: 100;
+    width: 20%;
+}
+
+div.left-column div.sec-menu li a, div.right-column div.sec-menu li a {
+    display: block;
+    width: 100%;
+}
+		
+body {
+    color: #333333;
+    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Pゴシック","MS PGothic","メイリオ",Osaka,sans-self,Verdana,Arial,Helvetica;
+    font-size: 100.01%;
+    letter-spacing: 0.1em;
+    line-height: 1.2em;
+    text-align: center;
+}
+/*右のコンテンツの位置*/
+.float-right {
+    float: right;
+    position: relative;
+    left: 200px;
+
+}
+/*真ん中下のコンテンツの位置*/
+.float-bottom{
+	float :right;
+	position: absolute;
+}
+/*ここではbodyについて設定している*/
+body {  
+        text-align: center;  
+        border: 1px solid #000000;  
+    }  
+body { background-color: #DDFFFF; }
+
+/*ブロック要素のものをセンタリングする
+これは.名前を作成しているため、classである
+classはhtml上で何回でも呼びだすことが可能である*/
+ 	.main {  
+ 		width: 100%;  
+        border: 1px solid #000000; 
+        border-bottom: 5px solid #FFB366;
+        border-top: 5px solid #FFB366;
+        padding: 3px 5px 3px 8px;
+	   }  
+ 	.main div   {  
+        width: 80%;  
+        border: 1px solid #FF0000;  
+        margin: 0 auto;  
+    }  
+/*
+#hoge {…}
+div#hoge {…}
+の違い
+前者はid="hoge"を持つ全ての要素に適用され、
+後者はid="hoge"を持つ<div>要素に適用される、
+と、いうことになります。
+*/
+.clearLeft {
+    clear: left;
+    width: 100%;
+}
+div#contents {
+    width: 100%;
+}
+body, form, h1, h2, h3, h4, h5, h6, pre, div, ul, p, br, table, img, input, label, script {
+    margin: 0;
+    padding: 0;
+}
+/*ヘッダーを作成する*/
+
+/*text-alignは・・・行揃えの一均等分割をを指定する
+eft
+    左寄せにします。
+right
+    右寄せにします。
+center
+    中央揃えにします。
+justify
+    均等割付にします。
+*/
+
+    /*サイト全体をセンタリングする
+これは#で名前を指定しているため、idである。
+idはhtml内で一度しか使用できない*/
+div#container2 {
+    text-align: center;
+    width: 100%;
+
+}
+div#container {
+    text-align: left;
+    width: 100%;
+
+}
+/*wordで下に薄い線を引く*/
+div#word{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #AAAAAA;
+    font-weight: normal;
+    margin: 0;
+    overflow: hidden;
+    padding-bottom: 0.17em;
+    padding-top: 0.5em;
+}
