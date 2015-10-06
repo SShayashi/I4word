@@ -1,7 +1,7 @@
 <?php
 
 try{
-	$dbh=new PDO('mysql:host=localhost;dbname=db25','db25','db25pass');
+	$dbh=new PDO('mysql:host=localhost;dbname=db25','root','kaogadekai');
 }catch(PDOExcepton $e){
 	var_dump($e->getMessage());
 	exit();
@@ -16,7 +16,7 @@ $name=$_REQUEST["name"];
 		今回はゲットで受け取った値をテキストボックスに入れて、その後POST通信で
 		submitするため、requestを利用します。
 		※request通信は便利だが本来POSTで送るものも、get通信のように送るため
-		セキュリティ上あまりよろしくない。			
+		セキュリティ上あまりよろしくない。
 		*/
 if(isset($_POST['update'])){
 		@$oldword=$_POST['oldword'];
@@ -49,7 +49,7 @@ if(isset($_POST['update'])){
 	</div>
 
 	<div id="header" class="clearfix">
-		
+
 		<div id="title">
 			<a href="index.php"><img border="0"  src="web_1.jpg" width="250" height="50"></a>
 			<div id="description">
@@ -71,8 +71,8 @@ if(isset($_POST['update'])){
 					</div>
 				</div>
 				<div>
-					
-				
+
+
 				</div>
 				<div>
 					<form action="" method="post">
@@ -81,7 +81,7 @@ if(isset($_POST['update'])){
 						言葉：<input type="text" name="word" value="<?php echo $name; ?>">
 						<?php
 							/*＠マークによってエラーを無視する*/
-							
+
 
 							if(isset($_POST['update'])){
 								if(strlen($word)){
@@ -90,7 +90,7 @@ if(isset($_POST['update'])){
 									}
 							}
 							?>
-						
+
 						<br><br>
 						<p>
 							説明(多数意味がある場合は意味分けする等して、見る人にわかりやすい形にしましょう。)
@@ -130,7 +130,7 @@ if(isset($_POST['update'])){
 						<li style="text-align: left; height: 19px; padding-right: 0px; margin-left: 13px; margin-top: 5px;">
 							<a title="はじめてのブログ" href="refe.php">全一覧</a>
 						</li>
-					</ul>		
+					</ul>
 
 					</li>
 					<div style="margin-left: 30px; border-right-width: 0px; margin-top: 20px;">
@@ -161,23 +161,23 @@ if(isset($_POST['update'])){
 					location.assign('index.php');
 					</script>";
 				echo "作成完了＾ｑ＾";
-				
+
 		}
 
 		//ワードが変更されている場合、そのワードが既に存在していないかを確認する
 		if($oldword!=$word){
 
 			//ワードが変更されているので、その変更先のワードを条件にデータベースを参照する
-			$stmt=null;			
+			$stmt=null;
 			$sql="select word from i4T where word='$word'";
 			$stmt=$dbh->query($sql);
 			//foreachで入力した言葉を配列に格納
 			foreach( $stmt->fetchAll(PDO::FETCH_ASSOC) as $val){
-			}			
+			}
 
 			//存在していなければTURE＿存在すればFALSE。
 			if(empty($val['word'])){
-				$stmt=null;			
+				$stmt=null;
 				$sql="update i4T set word='$word',ip='$ipAddress',day='$day',expl='$expl' where word='$oldword'";
 				$stmt=$dbh->query($sql);
 
@@ -187,19 +187,19 @@ if(isset($_POST['update'])){
 					</script>";
 				echo "作成完了＾ｑ＾";
 
-				
+
 			}else{
 				echo '<font size =10>※</font><font size=10><a href="word.php?name='.$val['word'] . '">' . $val['word'] . '</a>';
 				echo "</font><font size=5>は既に作成されています</font>";
-			}			
+			}
 
 		}
 
-		
-	}		
-	
+
+	}
+
 	$dbh = null;
-}		
+}
 ?>
 
 

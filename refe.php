@@ -1,7 +1,7 @@
 <?php
 
 try{
-	$dbh=new PDO('mysql:host=localhost;dbname=db25','db25','db25pass');
+	$dbh=new PDO('mysql:host=localhost;dbname=db25','root','kaogadekai');
 }catch(PDOExcepton $e){
 	var_dump($e->getMessage());
 	exit();
@@ -32,7 +32,7 @@ try{
 	</div>
 
 	<div id="header" class="clearfix">
-		
+
 		<div id="title">
 			<a href="index.php"><img border="0"  src="web_1.jpg" width="250" height="50"></a>
 			<div id="description">
@@ -53,7 +53,7 @@ try{
 						}else{
 							echo ">>全一覧";
 						}
-						?>									
+						?>
 					</div>
 				</div>
 				<div class="left-column column float-left">
@@ -83,7 +83,7 @@ try{
 								$sql="select distinct word from i4T order by word";
 								$stmt=$dbh->query($sql);
 								foreach( $stmt->fetchAll(PDO::FETCH_ASSOC) as $val){
-									        
+
 										/*mb_regex_encoding — 現在のマルチバイト正規表現用のエンコーディングを取得または設定する*/
 									    mb_regex_encoding("Shift_jis");
 										/*mb_ereg — マルチバイト文字列に正規表現マッチを行う*/
@@ -91,7 +91,7 @@ try{
 									    echo '<a href="word.php?name='.$val['word'].'">'.$val['word'].'</a>';
 										echo "<br>";
 									    }
-								}		
+								}
 							}
 							if($lang=="日本語"){
 								$sql="select distinct word from i4T order by word";
@@ -101,9 +101,9 @@ try{
 									    mb_regex_encoding("Shift_jis");
 									    if(mb_ereg("[0-9a-zA-Z]", $val['word']) != 1){
 									    echo '<a href="word.php?name='.$val['word'].'">'.$val['word'].'</a>';
-										echo "<br>";									    
-									    }									
-								}		
+										echo "<br>";
+									    }
+								}
 							}
 						}else{
 							$sql="select distinct word from i4T order by word";

@@ -1,7 +1,7 @@
 <?php
 
 try{
-	$dbh=new PDO('mysql:host=localhost;dbname=db25','db25','db25pass');
+	$dbh=new PDO('mysql:host=localhost;dbname=db25','root','kaogadekai');
 }catch(PDOExcepton $e){
 	var_dump($e->getMessage());
 	exit();
@@ -29,7 +29,7 @@ try{
 	</div>
 
 	<div id="header" class="clearfix">
-		
+
 		<div id="title">
 			<a href="index.php"><img border="0"  src="web_1.jpg" width="250" height="50"></a>
 			<div id="description">
@@ -67,7 +67,7 @@ try{
 							<div id="crumbs">
 								<div id="crumbs-inner">
 									<a title="I4辞書トップへ" href="index.php">ホーム</a>
-									>>言葉作成													
+									>>言葉作成
 								</div>
 							</div>
 						</div>
@@ -78,7 +78,7 @@ try{
 					<br>
 					言葉：
 					<input type="text" style="width:300px;" name="word" placeholder="作成する言葉を入力してください">
-					<?php 
+					<?php
 
 					if(isset($_POST['make'])){
 
@@ -98,8 +98,8 @@ try{
 					<br/>
 					説明(多数意味がある場合は意味分けする等して、見る人にわかりやすい形にしましょう。)
 
-					
-					<?php 
+
+					<?php
 					if(isset($_POST['make'])){
 						if(strlen($expl)){
 					  	}else{
@@ -115,14 +115,14 @@ try{
 				</div>
 			</div>
 		</div>
-	</div>		
+	</div>
 </div>
 <?php
 if(isset($_POST['make'])){
-	
+
 	//何も入力されていないときの処理
-	
-	
+
+
 	//データベースに入れる処理
 
 	if(strlen($word)&&strlen($expl)){
@@ -144,13 +144,13 @@ if(isset($_POST['make'])){
 					location.assign('index.php');
 					</script>";
 				echo "作成完了＾ｑ＾";
-				
+
 			}else{
 				echo '<font size =10>※</font><font size=10><a href="word.php?name='.$val['word'] . '">' . $val['word'] . '</a>';
 				echo "</font><font size=5>は既に作成されています</font>";
 			}
-			
-		}		
+
+		}
 }
 $dbh = null;
 ?>

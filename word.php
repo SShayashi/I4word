@@ -1,7 +1,7 @@
 <?php
 
 try{
-	$dbh=new PDO('mysql:host=localhost;dbname=db25','db25','db25pass');
+	$dbh=new PDO('mysql:host=localhost;dbname=db25','root','kaogadekai');
 }catch(PDOExcepton $e){
 	var_dump($e->getMessage());
 	exit();
@@ -32,7 +32,7 @@ $name=$_GET["name"];
 	</div>
 
 	<div id="header" class="clearfix">
-		
+
 		<div id="title">
 			<a href="index.php"><img border="0"  src="web_1.jpg" width="250" height="50"></a>
 			<div id="description">
@@ -42,7 +42,7 @@ $name=$_GET["name"];
 
 	</div>
 
-	
+
 
 	<div id="contents" class="clearfix">
 		<div id="wrapper">
@@ -106,11 +106,11 @@ $name=$_GET["name"];
 					?>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 
-		
+
 </div>
 
 

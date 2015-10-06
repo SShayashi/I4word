@@ -1,7 +1,7 @@
 <?php
 
 try{
-	$dbh=new PDO('mysql:host=localhost;dbname=db25','db25','db25pass');
+	$dbh=new PDO('mysql:host=localhost;dbname=db25','root','kaogadekai');
 }catch(PDOExcepton $e){
 	var_dump($e->getMessage());
 	exit();
@@ -29,7 +29,7 @@ try{
 	</div>
 
 	<div id="header" class="clearfix">
-		
+
 		<div id="title">
 			<a href="index.php"><img border="0"  src="web_1.jpg" width="250" height="50"></a>
 			<div id="description">
@@ -58,7 +58,7 @@ try{
 								<a title="全て一覧！" href="refe.php">全一覧</a>
 							</li>
 						</ul>
-						
+
 					</li>
 					<div style="margin-left: 30px; border-right-width: 0px; margin-top: 20px;">
 						・<a href="refe.php?lang=英語">英語の言葉</a>
@@ -94,25 +94,25 @@ try{
 									echo"<font size='5' color='#000000' face='Century,Verdana'>キーワード：「".$word."」に一致する言葉はありませんでした</font>";
 									}else{
 										echo "<div id=\"word\"><font size='5' color='#000000' face='Century,Verdana'>キーワード：「".$word."」</font>";
-											
+
 										echo "<font   size='4' color='#000000' face='Century,Verdana'>".$cnt."件見つかりました！</font>";
 										echo "</div>";
 
-										
+
 										//ここまではとおってきてる
-										
+
 										$stmt=null;
 										$sql="select word from i4T where word like '%".$word."%'";
 										$stmt=$dbh->query($sql);
 										foreach( $stmt->fetchAll(PDO::FETCH_ASSOC) as $val){
 											echo '<a href="word.php?name='.$val['word'].'">'.$val['word'].'</a>';
-											echo "<br>";	
-										}																			
+											echo "<br>";
+										}
 									}
 							}
 								//echo '<a href="word.php?name='.$val['word'] . '">' . $val['word'] . '</a>';
-							/*	
-							ファイル名の後の「？」がリクエストストリングスであることを示すお約束である。必ず 
+							/*
+							ファイル名の後の「？」がリクエストストリングスであることを示すお約束である。必ず
 							名前=値の書式をしていてこれを「URLパラメータ」や単に「パラメータ」と呼びます。
 							「name="変数"」は、「 パラメータ名 name の値が "変数" である 」ということをあらわしています。パラメータがいくつもある時は「&」で区切ります。
 							例：　<a href="http://xxxxxxx/index.php?user=Yuji&age=20">Click</a>
@@ -122,7 +122,7 @@ try{
 					?>
 				</div>
 
-			</div>			
+			</div>
 		</div>
 	</div>
 </div>
