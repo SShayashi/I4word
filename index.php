@@ -8,11 +8,11 @@ try{
 }
 
 
-		$sql="select * from db25 order by day desc limit 1";
+		$sql="select * from i4T order by day desc limit 1";
 		$stmt=$dbh->query($sql);
 		foreach( $stmt->fetchAll(PDO::FETCH_ASSOC) as $val){
 		}
-		
+
 ?>
 <!DOCUTYPE html>
 <html>
@@ -36,7 +36,7 @@ try{
 	</div>
 
 	<div id="header" class="clearfix">
-		
+
 		<div id="title">
 			<a href="index.php"><img border="0"  src="web_1.jpg" width="250" height="50"></a>
 			<div id="description">
@@ -45,7 +45,7 @@ try{
 		</div>
 
 	</div>
-	
+
 	<div id="contents" class="clearfix">
 		<div id="wrapper">
 			<div id="primary-column" class="column">
@@ -62,9 +62,9 @@ try{
 						<p>そこで、この林が作った辞書を活用してもらいたい。この辞書にはI4内で使われている言葉が登録されており、I4独自の意味を登録している。</p>
 						<p>更に、この辞書は誰でも編集可能である。利用者の方には、I4で使われている言葉をどんどんと登録してもらいたい。</p>
 						<p><b>※編集者のIPアドレスは保管しています。荒らし行為はご遠慮ください</b></p>
-						
+
 					</div>
-						
+
 				</div>
 				<div class="left-column column float-left">
 					<h2>言葉の作成・観覧</h2>
@@ -79,7 +79,7 @@ try{
 						<a title="全一覧" href="refe.php">全一覧</a>
 					</li>
 					</ul>
-						
+
 					</li>
 					<div style="margin-left: 30px; border-right-width: 0px; margin-top: 20px;">
 						・<a href="refe.php?lang=英語">英語の言葉</a>
@@ -89,7 +89,7 @@ try{
 				</div>
 				<div class="right-column column float-right" style="top: -235px; width: 185px;">
 					<h2>プロフィール</h2>
-					<div class="sec-menu keisen-white" style="padding-bottom: 60px;"> 
+					<div class="sec-menu keisen-white" style="padding-bottom: 60px;">
 						<div>
 							<a title="我らがI4の担任">
 								<img width="150 height="150" alt="ITO" src="ito.jpg">
@@ -98,16 +98,16 @@ try{
 							<p>林です。このページを訪れた方は、是非言葉を作成していってください。</p>
 					</div>
 				</div>
-				
-				
+
+
 				<div class="right-column column float-bottom" style="top: px; width: 660px; height: 200px;">
 					<h2>最近更新された言葉</h2>
 					<div class="sec-menu keisen-white">
-						
+
 						<div>
-							
+
 						</div>
-								<p><div id ="word"><font size=6 color =#000000><?php 
+								<p><div id ="word"><font size=6 color =#000000><?php
 								echo $val['word'];
 								?></font><?php echo "<a href='edit.php?name=".$val['word']."'>[編集]</a></div>";//編集のハイパーリンク
 								?>
@@ -116,7 +116,7 @@ try{
 								echo "<div id =\"word\">";
 								echo nl2br($val['expl']);
 								echo "<br></div>";
-								
+
 								echo "最終更新日時";
 								echo $val['day'];
 
@@ -125,9 +125,9 @@ try{
 								$dbh = null;
 								?>
 						<div>
-							
+
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
