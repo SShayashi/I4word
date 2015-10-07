@@ -137,7 +137,7 @@ if(isset($_POST['make'])){
 		}
 		//wordの中に値が入っているか確認する。入っていなければ新しく作る言葉でありTURE入っていれば既にある言葉でありFALSE。
 			if(empty($val['word'])){
-				$sql="insert into i4T values('','$word','$ipAddress','$day','$expl');";
+				$sql="insert into i4T values('','$word','$expl','$ipAddress','$day');";
 				$stmt=$dbh->query($sql);
 				echo "<script type=\"text/javascript\">
 					alert(\"作成完了しました\");

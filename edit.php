@@ -154,7 +154,7 @@ if(isset($_POST['update'])){
 
 		//ワードが変更されていないかを確認し、ワードが変更されていなければ、そのまま更新
 		if($oldword==$word){
-			$sql="update i4T set word='$word',ip='$ipAddress',day='$day',expl='$expl' where word='$oldword'";
+			$sql="update i4T set word='$word',expl='$expl',ip='$ipAddress',day='$day' where word='$oldword'";
 				$stmt=$dbh->query($sql);
 				echo "<script type=\"text/javascript\">
 					alert(\"更新完了しました\");
@@ -178,7 +178,7 @@ if(isset($_POST['update'])){
 			//存在していなければTURE＿存在すればFALSE。
 			if(empty($val['word'])){
 				$stmt=null;
-				$sql="update i4T set word='$word',ip='$ipAddress',day='$day',expl='$expl' where word='$oldword'";
+				$sql="update i4T set word='$word',expl='$expl',ip='$ipAddress',day='$day' where word='$oldword'";
 				$stmt=$dbh->query($sql);
 
 				echo "<script type=\"text/javascript\">
