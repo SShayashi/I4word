@@ -12,7 +12,7 @@ $name=$_GET["name"];
 <html jang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>DB接続</title>
+	<title>i4word</title>
 	<link rel="stylesheet" type="text/css" href="i10023_6.css" media="all">
 	<script type="text/javascript" src="i10023_6.js"></script>
 	<script type="text/javascript" src="prototype.js"></script>
